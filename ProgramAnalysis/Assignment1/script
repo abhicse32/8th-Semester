@@ -1,0 +1,9 @@
+#!/usr/bin/env python
+import os
+for i in range(1,4):
+    # generates LLVM IR
+    os.system("clang  -emit-llvm -S -c -o test"+str(i)+".ll test"+str(i)+".c")
+    # prints instructions count
+    os.system("opt -stats -analyze -instcount test"+str(i)+".ll")
+    # printing the alias analysis
+    os.system("opt -aa-eval -disable-output test"+str(i)+".ll")

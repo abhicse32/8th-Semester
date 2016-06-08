@@ -1,0 +1,97 @@
+Note: there are three c programs named as test1.c, test2.c and test3.c . Script is written in python. To run the tests, please type ./script in terminal after changing directory to the test directory. 
+
+1. Analysis report of the first test- test1.c -> test1.ll
+
+add: 1
+alloca: 5
+br: 3
+call: 4
+fdiv: 1
+fmul: 1
+fpext: 1
+icmp: 1
+load: 8
+mul: 1
+ret: 3
+store: 7
+basic-blocks: 6
+memory instructions: 24
+total instructions: 36
+non-external function: 3
+
+===== Alias Analysis Evaluator Report =====
+  9 Total Alias Queries Performed
+  9 no alias responses (100.0%)
+  0 may alias responses (0.0%)
+  0 partial alias responses (0.0%)
+  0 must alias responses (0.0%)
+  Alias Analysis Evaluator Pointer Alias Summary: 100%/0%/0%/0%
+  9 Total ModRef Queries Performed
+  5 no mod/ref responses (55.5%)
+  0 mod responses (0.0%)
+  2 ref responses (22.2%)
+  2 mod & ref responses (22.2%)
+  Alias Analysis Evaluator Mod/Ref Summary: 55%/0%/22%/22%
+
+
+2. Analysis report of the second test- test2.c -> test2.ll
+
+ 2 instcount - Number of Add insts
+ 7 instcount - Number of Alloca insts
+ 1 instcount - Number of BitCast insts
+ 4 instcount - Number of Br insts
+ 3 instcount - Number of Call insts
+ 2 instcount - Number of GetElementPtr insts
+ 1 instcount - Number of ICmp insts
+ 8 instcount - Number of Load insts
+ 2 instcount - Number of Ret insts
+ 8 instcount - Number of Store insts
+ 6 instcount - Number of basic blocks
+38 instcount - Number of instructions (of all types)
+28 instcount - Number of memory instructions
+ 2 instcount - Number of non-external functions
+
+===== Alias Analysis Evaluator Report =====
+  49 Total Alias Queries Performed
+  41 no alias responses (83.6%)
+  4 may alias responses (8.1%)
+  1 partial alias responses (2.0%)
+  3 must alias responses (6.1%)
+  Alias Analysis Evaluator Pointer Alias Summary: 83%/8%/2%/6%
+  30 Total ModRef Queries Performed
+  7 no mod/ref responses (23.3%)
+  5 mod responses (16.6%)
+  6 ref responses (20.0%)
+  12 mod & ref responses (40.0%)
+  Alias Analysis Evaluator Mod/Ref Summary: 23%/16%/20%/40%
+
+3. Analysis report of 3rd test- test3.c -> test3.ll
+
+3 instcount - Number of Add insts
+ 3 instcount - Number of Alloca insts
+ 1 instcount - Number of Call insts
+ 1 instcount - Number of GetElementPtr insts
+12 instcount - Number of Load insts
+ 1 instcount - Number of Ret insts
+ 7 instcount - Number of Store insts
+ 1 instcount - Number of basic blocks
+28 instcount - Number of instructions (of all types)
+24 instcount - Number of memory instructions
+ 1 instcount - Number of non-external functions
+
+===== Alias Analysis Evaluator Report =====
+  45 Total Alias Queries Performed
+  13 no alias responses (28.8%)
+  32 may alias responses (71.1%)
+  0 partial alias responses (0.0%)
+  0 must alias responses (0.0%)
+  Alias Analysis Evaluator Pointer Alias Summary: 28%/71%/0%/0%
+  10 Total ModRef Queries Performed
+  1 no mod/ref responses (10.0%)
+  0 mod responses (0.0%)
+  1 ref responses (10.0%)
+  8 mod & ref responses (80.0%)
+  Alias Analysis Evaluator Mod/Ref Summary: 10%/0%/10%/80%
+
+Observations:
+ test1: since there are no pointers in the program, all alias responses are noAlias.
